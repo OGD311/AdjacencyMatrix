@@ -6,25 +6,37 @@ def makenodes():
     return matrix
 
 def printmatrix(matrix):
-    rowp = ""
     for row in matrix:
         print(row)
 
 
 def populmatrix(matrix):
     x = -1
+    directed = input("Directed or Undirected?: ").lower()
     for row in matrix:
         x += 1
         for i in range(len(row)):
-            if x != i:
-                if matrix[x][i] == " ":
-                    print("Value for row",x,"column",i+1)
-                    val = input()
-                    matrix[x][i] = val
-                    matrix[i][x] = val
-    
-                    printmatrix(matrix)
+            if directed != "directed":
+                if x != i:
+                    if matrix[x][i] == " ":
+                        print("Value for row",x,"column",i+1)
+                        val = input()
+                        if val == "":
+                            val = " "
+                        matrix[x][i] = val
+                        matrix[i][x] = val
 
+                        printmatrix(matrix)
+            else:
+                if x != i:
+                    if matrix[x][i] == " ":
+                        print("Value for row",x,"column",i+1)
+                        val = input()
+                        if val == "":
+                            val = " "
+                        matrix[x][i] = val
+
+                        printmatrix(matrix)
     return matrix
 
 
