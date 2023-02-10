@@ -1,6 +1,10 @@
 #Adjacency Matrix Plot
 
-#Adjacency Matrix
+#imports 
+import matplotlib.pyplot as plt
+import networkx as nx
+
+#Adjacency Matrix functions
 def makenodes():
     num = int(input("How many nodes: "))
     matrix = [[" " for i in range(num)] for l in range(num)]
@@ -34,12 +38,9 @@ def populmatrix(matrix):
 matrix, num = makenodes()
 populmatrix(matrix)
 
-print("Done")
-#Visual Graph
-import matplotlib.pyplot as plt
-import networkx as nx
 
 
+#Visual Graph functions
 
 def createnodes(num):
     G = nx.Graph()
@@ -64,6 +65,8 @@ def connectnodes(Graph,matrix):
 
     return Graph
 
+
+#Main
 Graph = createnodes(num)
 G = connectnodes(Graph,matrix)
 
