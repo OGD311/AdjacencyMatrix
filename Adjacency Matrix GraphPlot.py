@@ -6,7 +6,13 @@ import networkx as nx
 
 #Adjacency Matrix functions
 def makenodes():
-    num = int(input("How many nodes: "))
+    while True:
+        num = int(input("How many nodes: "))
+        if num <= 20:
+            break
+        else:
+            print("Number is too big - please pick a number smaller than 20")
+
     matrix = [[" " for i in range(num)] for l in range(num)]
     return matrix , num
 
@@ -59,8 +65,11 @@ def connectnodes(Graph,matrix):
             if x != i:
                 snode = x+1
                 enode = i+1
-                weights = int(matrix[x][i])
-                Graph.add_edge(snode,enode,weight=weights)
+                if matrix[x][i] == " ":
+                    Graph.add_edge(snode,enode)
+                else:
+                    weights = int(matrix[x][i])
+                    Graph.add_edge(snode,enode,weight=weights)
 
 
     return Graph
