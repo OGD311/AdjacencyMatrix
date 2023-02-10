@@ -1,5 +1,5 @@
 # AdjacencyMatrix
-Simple Python code for an Adjacency Matrix in python
+Python code for an Adjacency Matrix. Now supports graphing :)
 
 # Latest Version
 Adjacency Matrix Graphing V0.4 
